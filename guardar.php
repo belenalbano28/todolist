@@ -1,10 +1,10 @@
 <?php
+session_start();
 include_once 'database.php';
 $database = new Database();
 $db = $database->getConnection();
 $conn = $db;
 
-if (isset($_POST['email_r'])&& isset($_POST['nombre_r'])&&isset($_POST['password_r'])&&isset($_POST['confirmpassword_r'])) {
     
     $nombre=htmlspecialchars(strip_tags($_POST['name_r']));
     $mail=htmlspecialchars(strip_tags($_POST['email_r']));
@@ -12,19 +12,25 @@ if (isset($_POST['email_r'])&& isset($_POST['nombre_r'])&&isset($_POST['password
 
     $pass_hush=password_hash($pass,PASSWORD_DEFAULT);
 
-    $stmt = $this->conn->prepare("INSERT INTO `usuario`(`usuario`, `mail`, `contrasena`) VALUES (?,?,?);"); 
+    $stmt = $conn->prepare("INSERT INTO `usuario`(`usuario`, `mail`, `contrasena`) VALUES (?,?,?);"); 
     //en un caso real, utilizaria stored procedures. En este caso particular, priorizo agilidad.
     $stmt->bindValue(1, $nombre);
     $stmt->bindValue(2, $mail);
     $stmt->bindValue(3, $pass_hush);
-
-    if($stmt->execute()){
-        return true;
+   if(!$stmt->execute()){
+       print_r($stmt->errorInfo());
+   }else{
+       $stmt = $conn->prepare("SELECT `id_usuario` FROM `usuario` WHERE mail=? AND usuario=?;"); 
+       $stmt->bindValue(1, $mail);
+       $stmt->bindValue(2, $nombre);
+     $stmt->execute();
         
-     }else{
-       return false;
+        if (false !== ($row = $stmt->fetchColumn()))
+        {
+            $_SESSION['idusuario']=$row;
+        }
        
-     }
+   }
+      
 
-}
 ?>
