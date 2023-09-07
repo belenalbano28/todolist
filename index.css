@@ -1,0 +1,31 @@
+.login {
+    min-height: 100vh;
+  }
+  
+  .bg-image {
+    background-image: url('img.jpg'); 
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .login-heading {
+    font-weight: 300;
+  }
+  
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }
+
+  #register{
+    display: none;
+  }
+
+  .verde{
+    color: rgb(26, 151, 26);
+  }
+  .rojo{
+    color: rgb(218, 43, 43);
+  }
+  

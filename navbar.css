@@ -1,0 +1,10 @@
+@media only screen and (min-width: 990px)  {
+    .btn{
+        margin-left: 15px;
+    }
+}
+@media only screen and (max-width: 990px)  {
+    .btn{
+        margin-left: -2px;
+    }
+}
