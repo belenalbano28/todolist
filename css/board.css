@@ -2,12 +2,17 @@ body {
     font-family: "Open Sans", sans-serif;
     line-height: 1.6;
 }
-
+.form-check-label{
+    font-family: "Open Sans", sans-serif;
+    color: rgb(100, 98, 98) !important; 
+}
 .add-todo-input,
 .edit-todo-input {
     outline: none;
 }
-
+#error,#success{
+    display: none;
+}
 .add-todo-input:focus,
 .edit-todo-input:focus {
     border: none !important;
