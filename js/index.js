@@ -42,20 +42,19 @@ function verificarStatus(){
         if(status==0){
             setTimeout(function () {
                 $('#alerta').css('display','none');
-                localStorage.removeItem("status");
-                //cerrar 
+                localStorage.removeItem("status"); 
               }, 5000);
                $('#alerta').css('display','block');
         }else if(status==3){
             setTimeout(function () {
                 $('#alerta2').css('display','none');
                 localStorage.removeItem("status");
-                //cerrar 
               }, 5000);
                $('#alerta2').css('display','block');
         }
         else{
     //esta logueado
+        $('#boton').html('<a href="php/logout.php" class="btn btn-outline-primary my-2 my-sm-0">logout</a>');
         }
     }
    
