@@ -18,3 +18,17 @@ function verificar(){
     $('#text_confirm').html('Correct!');
    }
 }
+
+function largo(){
+    var p= $('#password').val();
+    $('#text_confirm2').html('');
+    if(p.length<5){
+        $('#text_confirm2').html('Minimum of 5 characters..');
+        $('#text_confirm2').addClass('rojo');
+        $('#text_confirm2').removeClass('verde');
+    }else{
+        $('#text_confirm2').addClass('verde');
+        $('#text_confirm2').removeClass('rojo');
+        $('#text_confirm2').html('Correct!');
+    }
+}

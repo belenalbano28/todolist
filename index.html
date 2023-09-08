@@ -65,8 +65,9 @@
                         <label for="floatingInput">Email address</label>
                       </div>
                       <div class="form-floating mb-3">
-                        <input type="password" name="password_r" class="form-control" id="password" placeholder="Password" required>
+                        <input type="password" name="password_r" onkeyup="largo()" class="form-control" id="password" placeholder="Password" required>
                         <label for="floatingPassword">Password</label>
+                        <label id="text_confirm2" ></label>
                       </div>
                       <div class="form-floating mb-3">
                         <input type="password" name="confirmpassword_r" onkeyup="verificar()" class="form-control" id="confirmpassword" placeholder="Confirm password" required>

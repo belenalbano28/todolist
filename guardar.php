@@ -5,7 +5,7 @@ $database = new Database();
 $db = $database->getConnection();
 $conn = $db;
 
-    
+    $_SESSION['idusuario']=
     $nombre=htmlspecialchars(strip_tags($_POST['name_r']));
     $mail=htmlspecialchars(strip_tags($_POST['email_r']));
     $pass=htmlspecialchars(strip_tags($_POST['password_r']));
@@ -28,6 +28,7 @@ $conn = $db;
         if (false !== ($row = $stmt->fetchColumn()))
         {
             $_SESSION['idusuario']=$row;
+            header("Location: board.html");
         }
        
    }
