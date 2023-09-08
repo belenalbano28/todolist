@@ -3,9 +3,15 @@
   }
   
   .bg-image {
-    background-image: url('img.jpg'); 
+    background-image: url('../img.jpg'); 
     background-size: cover;
     background-position: center;
+  }
+  #alerta{
+    display: none;
+  }
+  #alerta2{
+    display: none;
   }
   
   .login-heading {

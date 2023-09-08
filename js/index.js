@@ -32,3 +32,31 @@ function largo(){
         $('#text_confirm2').html('Correct!');
     }
 }
+
+function verificarStatus(){
+    //0, contrasena incorrecta, no se logueo.
+    //1, se logueo bien
+
+    var status=localStorage.getItem("status");
+    if(status!=null){
+        if(status==0){
+            setTimeout(function () {
+                $('#alerta').css('display','none');
+                localStorage.removeItem("status");
+                //cerrar 
+              }, 5000);
+               $('#alerta').css('display','block');
+        }else if(status==3){
+            setTimeout(function () {
+                $('#alerta2').css('display','none');
+                localStorage.removeItem("status");
+                //cerrar 
+              }, 5000);
+               $('#alerta2').css('display','block');
+        }
+        else{
+    //esta logueado
+        }
+    }
+   
+}

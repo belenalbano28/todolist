@@ -18,7 +18,14 @@ $conn = $db;
     $stmt->bindValue(2, $mail);
     $stmt->bindValue(3, $pass_hush);
    if(!$stmt->execute()){
-       print_r($stmt->errorInfo());
+       //print_r($stmt->errorInfo());
+       ?>
+                  <script>
+                   localStorage.setItem("status", 3);
+                     location.href ='../index.html';
+                  </script>
+                  <?php
+              
    }else{
        $stmt = $conn->prepare("SELECT `id_usuario` FROM `usuario` WHERE mail=? AND usuario=?;"); 
        $stmt->bindValue(1, $mail);
@@ -28,7 +35,7 @@ $conn = $db;
         if (false !== ($row = $stmt->fetchColumn()))
         {
             $_SESSION['idusuario']=$row;
-            header("Location: board.html");
+            header("Location: ../board.html");
         }
        
    }
