@@ -34,7 +34,12 @@ $conn = $db;
         if (false !== ($row = $stmt->fetchColumn()))
         {
             $_SESSION['idusuario']=$row;
-            header("Location: ../board.html");
+            ?>
+            <script>
+             localStorage.setItem("status", 1);
+             location.href ='../board.html';
+            </script>
+            <?php
         }
        
    }
