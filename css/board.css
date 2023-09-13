@@ -43,3 +43,9 @@ body {
 .h1{
     font-size: 2.1rem;
 }
+
+@media only screen and (max-width: 980px)  {
+    .form-control[readonly] {
+        font-size: 24px !important;
+    }
+}
