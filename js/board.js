@@ -26,6 +26,7 @@ function agregarTarea(){
           }, 4000);
           $('#error').css('display','block');
      }
+     $('#nombreTarea').val('');
    }).fail(function (msg) {
      console.log('a', msg);
      setTimeout(function () {
